@@ -1,0 +1,37 @@
+
+com.hunt.controller.SystemController
+
+public Result login(@RequestParam String loginName,
+                        @RequestParam String password,
+                        @RequestParam int platform,
+                        HttpServletRequest request)
+
+/system/login
+
+{
+	"code": 10000,
+	"msg": "操作成功",
+	"data": {
+		"loginName": "admin",
+		"zhName": "admin",
+		"enName": "admin",
+		"sex": 1,
+		"birth": null,
+		"email": null,
+		"phone": null,
+		"address": null,
+		"jobs": [{
+			"id": 7,
+			"sysUserId": 1,
+			"sysRoleOrganizationId": 2,
+			"rank": 0,
+			"createTime": 1477928954000,
+			"updateTime": 1477929234000,
+			"createBy": 0,
+			"updateBy": 0,
+			"status": 1,
+			"isFinal": 2
+		}],
+		"permissions": []
+	}
+}

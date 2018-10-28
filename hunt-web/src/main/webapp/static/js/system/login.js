@@ -39,6 +39,7 @@ $(document).ready(function () {
                     } else if (!captcha.getValidate()) {
                         common_tool.messager_show("请刷新并滑动验证码!")
                     } else {
+                        console.log("getRootPath():   "+getRootPath());
                         $.ajax({
                             url: getRootPath() + "/system/login",
                             type: "post",
@@ -52,8 +53,9 @@ $(document).ready(function () {
                                 geetest_seccode: $("input[name='geetest_seccode']").val(),
                             },
                             success: function (data) {
+                                console.log("JSON.stringify(data):   "+JSON.stringify(data));
                                 if (data.code == 10000) {
-                                    location.href = getRootPath() + "/system/welcome";
+                                    // location.href = getRootPath() + "/system/welcome";
                                 } else if (data.code == 20001) {
                                     common_tool.messager_show(data.msg)
                                     $("#username").focus();
